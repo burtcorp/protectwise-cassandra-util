@@ -124,6 +124,8 @@ object CassandraUtilBuild extends Build {
         "org.apache.cassandra" % "cassandra-all" % cassandraVersion % Provided
       ),
 
+      javacOptions ++= Seq("-source", "1.7", "-target", "1.7"),
+
       javaOptions in(Test, run) ++= Seq(
         "-d64",
         "-server",
